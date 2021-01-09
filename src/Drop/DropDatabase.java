@@ -1,5 +1,8 @@
 package Drop;
 
+/*
+ * drop  database s
+ */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -17,7 +20,7 @@ public class DropDatabase implements ActionListener{
 		String tdatabase = MySQL.name.getText();
 		MySQL.name.setText(null);//清空文本域
 		System.out.println(tdatabase);
-		MySQL.A.setText("新建成功,请关闭");
+		MySQL.A.setText("删除成功,请关闭");
 		
 		Connection conn = null;
 		String url = "jdbc:mysql://localhost:3306?useSSL=false&serverTimezone=GMT%2B8";

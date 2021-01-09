@@ -1,5 +1,7 @@
 package Drop;
-
+/*
+ * drop  table t
+ */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -17,7 +19,7 @@ public class DropTable implements ActionListener{
 		String ttable = MySQL.name.getText();
 		MySQL.name.setText(null);//清空文本域
 		System.out.println(ttable);
-		MySQL.A.setText("新建成功,请关闭");
+		MySQL.A.setText("删除成功,请关闭");
 		
 		
 		Connection conn = null;

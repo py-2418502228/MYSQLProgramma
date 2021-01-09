@@ -5,7 +5,7 @@ package Insert;
 /*
  insert into t1
 VALUES
-("小八",2002,2012-3-12,null)
+("小八",2002,55)
  */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,7 +26,7 @@ public class InsertDemo implements ActionListener{
 		String tInsert = MySQL.name.getText();
 		MySQL.name.setText(null);//清空文本域
 		System.out.println(tInsert);
-		MySQL.A.setText("新建成功,请关闭");
+		MySQL.A.setText("插入成功,请关闭");
 		
 		
 		Connection conn = null;

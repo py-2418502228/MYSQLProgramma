@@ -1,13 +1,11 @@
 package DatabaseCaozuo;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -38,7 +36,6 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JSeparator;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -52,8 +49,6 @@ import java.io.IOException;
 import java.awt.event.ActionEvent;
 import javax.swing.JList;
 import java.awt.Toolkit;
-import javax.swing.ImageIcon;
-import java.awt.FlowLayout;
 
 public class MySQL extends JFrame {
 	

@@ -2,7 +2,8 @@ package New;
 
 
 /*
- * 
+ * create table t
+(user char(10) PRIMARY key not null)
  */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

@@ -1,5 +1,10 @@
 package New;
 
+/*
+ * create view a
+as
+SELECT usename from t1
+ */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
