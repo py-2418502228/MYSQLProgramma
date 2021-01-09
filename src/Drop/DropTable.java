@@ -1,4 +1,4 @@
-package DatabaseCaozuo;
+package Drop;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,18 +7,21 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class DropDatabase implements ActionListener{
+import DatabaseCaozuo.MySQL;
+
+public class DropTable implements ActionListener{
 
 	@Override
-	public void actionPerformed(ActionEvent e1) {
+	public void actionPerformed(ActionEvent e) {
 		
-		String tdatabase = MySQL.name.getText();
+		String ttable = MySQL.name.getText();
 		MySQL.name.setText(null);//清空文本域
-		System.out.println(tdatabase);
+		System.out.println(ttable);
 		MySQL.A.setText("新建成功,请关闭");
 		
+		
 		Connection conn = null;
-		String url = "jdbc:mysql://localhost:3306?useSSL=false&serverTimezone=GMT%2B8";
+		String url = "jdbc:mysql://localhost:3306/mysqldemo?useSSL=false&serverTimezone=GMT%2B8";
 		String user = "root";
 		String password = "2418502228";
 		//Statement stmt = null;
@@ -30,37 +33,38 @@ public class DropDatabase implements ActionListener{
 			conn = DriverManager.getConnection(url, user, password);
 			
 			// 3.创建SQL命令发送器PreparedStatement
-			//String sql = "drop database s"; //? 占位符
-			ps = conn.prepareStatement(tdatabase);
-
-			ps.execute(tdatabase);
+			//String sql = "drop table t1";
+			ps = conn.prepareStatement(ttable);
+			
+			ps.execute(ttable);
 			
 			System.out.println("删除成功");
 
-		} catch (ClassNotFoundException e) {
+			
+		} catch (ClassNotFoundException e1) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
+			e1.printStackTrace();
+		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e1.printStackTrace();
 		} finally {
 			try {
 				if(ps != null) 
 					ps.close();
-			} catch (SQLException e) {
+			} catch (SQLException e1) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				e1.printStackTrace();
 			}
 			
 			try {
 				if(conn != null)
 					conn.close();
-			} catch (SQLException e) {
+			} catch (SQLException e1) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				e1.printStackTrace();
 			}
 		}
 		
 	}
-
+	
 }

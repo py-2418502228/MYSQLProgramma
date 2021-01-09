@@ -1,8 +1,7 @@
-package DatabaseCaozuo;
+package HanShu;
 
 /*
-select Sum(marks)  as He
-from  t1
+ * select Min(marks)  as He  from  t1
  */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,13 +12,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class SumList implements ActionListener{
+import DatabaseCaozuo.MySQL;
+
+public class MinList implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		
-			String sum = MySQL.name.getText();//获取文本域内容
-			System.out.println(sum);
+			String avg= MySQL.name.getText();//获取文本域内容
+			System.out.println(avg);
 			MySQL.name.setText(null);//清空文本域
 			MySQL.A.setText("查询成功,请关闭");
 			
@@ -32,6 +33,7 @@ public class SumList implements ActionListener{
 		ResultSet rs = null;
 		Statement stmt = null;
 		int S = 0;
+		int L=0;
 		// 1.加载启动
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -42,11 +44,16 @@ public class SumList implements ActionListener{
 			// 3.创建SQL命令发送器PreparedStatement
 			//String sql = "create database s"; //
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(sum);
+			rs = stmt.executeQuery(avg);
+			//遍历将最小值存入L
 			while(rs.next()) {
-				S=S+rs.getInt("He");//计算求和
+				L = S=rs.getInt("He");
+				if(S<L) {
+					L = S;
+				}
+
 			}
-			System.out.println(S);
+			System.out.println(L);
 			System.out.println("计算成功");
 
 		} catch (ClassNotFoundException e) {

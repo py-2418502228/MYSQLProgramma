@@ -1,4 +1,4 @@
-package DatabaseCaozuo;
+package HanShu;
 
 /*
 select Avg(marks)  as He
@@ -12,6 +12,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import DatabaseCaozuo.MySQL;
 
 public class Averag implements ActionListener{
 

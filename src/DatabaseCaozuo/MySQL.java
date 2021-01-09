@@ -22,6 +22,15 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
+import Drop.DropDatabase;
+import Drop.DropTable;
+import Drop.DropView;
+import HanShu.Averag;
+import HanShu.MinList;
+import HanShu.SumList;
+import Insert.InsertDemo;
+import New.NewDatebase;
+import New.NewTable;
 
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
